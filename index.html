@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CPFE Explained</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 2rem;
+      max-width: 800px;
+    }
+    .tooltip {
+      position: relative;
+      display: inline-block;
+      border-bottom: 1px dotted #000;
+      cursor: help;
+    }
+    .tooltip .tooltiptext {
+      visibility: hidden;
+      width: 220px;
+      background-color: rgba(51,51,51,0.9);
+      color: #fff;
+      text-align: left;
+      border-radius: 4px;
+      padding: 8px;
+      position: absolute;
+      z-index: 100;
+      bottom: 125%;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .tooltip:hover .tooltiptext {
+      visibility: visible;
+      opacity: 1;
+    }
+    #simple, #complex {
+      display: none;
+    }
+    #complex {
+      display: block;
+    }
+    .toggle-container {
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>Understanding CPFE</h1>
+  <div class="toggle-container">
+    <label>
+      <input type="checkbox" id="toggleView"> Show simplified text
+    </label>
+  </div>
+  <div id="complex">
+    <p>
+      Combined pulmonary fibrosis and emphysema (
+      <span class="tooltip">
+        CPFE
+        <span class="tooltiptext">
+          Combined Pulmonary Fibrosis and Emphysema: a lung disease involving both scarring (fibrosis) and air sac destruction (emphysema).
+        </span>
+      </span>
+      ) represents an increasingly recognized progressive lung pathophysiology.
+    </p>
+    <p>
+      The disease shows strong male predominance, a lack of specific treatment options, and poor prognosis.
+    </p>
+    <p>
+      The complex pathology of this condition involves emphysematous destruction of lung parenchyma, diffuse interstitial fibrosis, changes in the composition of lung immune cells, increased production of immunomodulatory factors, and prominent remodeling of pulmonary vasculature.
+    </p>
+    <p>
+      Having both obstructive changes and restrictive changes in the same lungs results in unexpectedly preserved lung volumes, yet gas exchange is severely impaired.
+    </p>
+  </div>
+
+  <div id="simple">
+    <p>
+      Combined pulmonary fibrosis and emphysema (CPFE — combined means both conditions in one person; pulmonary means the lungs; fibrosis means scar tissue build-up; emphysema means destruction of the tiny air sacs called alveoli) represents an increasingly recognized progressive lung pathophysiology (a disease process affecting lung function that doctors are diagnosing more often and that worsens over time).
+    </p>
+    <p>
+      The disease shows strong male predominance (it occurs much more often in men), a lack of specific treatment options (no therapies that directly target CPFE), and poor prognosis (patients generally face limited long-term survival).
+    </p>
+    <p>
+      The complex pathology involves emphysematous destruction of lung parenchyma (damage to the alveoli, the part of the lung where gas exchange happens), diffuse interstitial fibrosis (widespread scarring in the tissue between alveoli), changes in the composition of lung immune cells (altered types or numbers of white blood cells in the lungs), increased production of immunomodulatory factors (higher levels of proteins like cytokines that influence immune responses), and prominent remodeling of pulmonary vasculature (structural changes in the network of blood vessels in the lungs).
+    </p>
+    <p>
+      Having both obstructive changes (airflow blockage, as in emphysema) and restrictive changes (stiff, scarred lungs that can’t expand fully, as in fibrosis) in the same lungs results in unexpectedly preserved lung volumes (lung size measurements may appear normal) yet severely impaired gas exchange (oxygen and carbon dioxide don’t move properly between lungs and blood).
+    </p>
+  </div>
+
+  <script>
+    document.getElementById('toggleView').addEventListener('change', function() {
+      var simple = document.getElementById('simple');
+      var complex = document.getElementById('complex');
+      if (this.checked) {
+        simple.style.display = 'block';
+        complex.style.display = 'none';
+      } else {
+        simple.style.display = 'none';
+        complex.style.display = 'block';
+      }
+    });
+  </script>
+</body>
+</html>
